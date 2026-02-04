@@ -23,9 +23,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //float movementDistanceX = movementX * speed * Time.deltaTime;
-        //float movementDistanceY = movementY * speed * Time.deltaTime;
-        //transform.position = new Vector2(transform.position.x + movementDistanceX, transform.position.y + movementDistanceY);
         rb.linearVelocity = new Vector2(movementX * speed, rb.linearVelocity.y);
         if (!Mathf.Approximately(movementX, 0f))
         {
@@ -36,14 +33,13 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
-
-        
             
         if (isGrounded && movementY > 0)
         {
-            rb.AddForce(new Vector2(0, 100));
+            rb.AddForce(new Vector2(0, 250));
         }
     }
+
     void OnMove(InputValue value)
     {
         Vector2 v = value.Get<Vector2>();
