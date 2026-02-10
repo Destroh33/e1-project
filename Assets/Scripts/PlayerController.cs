@@ -24,7 +24,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
+    public int GetScore()
+    {
+        return score;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
